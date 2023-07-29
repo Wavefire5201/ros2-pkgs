@@ -38,12 +38,12 @@ class ControllerPublisher(Node):
                 input = stdscr.getkey()
                 match input:
                     case "w":
-                        twist.linear.x += 0.1
+                        twist.linear.x += 0.01
                         output_win.clear()
                         output_win.addstr(f"currently:   lv: {round(twist.linear.x, 4)}  av: {round(twist.angular.z, 4)}")
                         output_win.refresh()
                     case "a":
-                        twist.angular.z += 0.1
+                        twist.angular.z += 0.01
                         output_win.clear()
                         output_win.addstr(f"currently:   lv: {round(twist.linear.x, 4)}  av: {round(twist.angular.z, 4)}")
                         output_win.refresh()
@@ -54,12 +54,12 @@ class ControllerPublisher(Node):
                         output_win.addstr(f"currently:   lv: {round(twist.linear.x, 4)}  av: {round(twist.angular.z, 4)}")
                         output_win.refresh()
                     case "d":
-                        twist.angular.z -= 0.1
+                        twist.angular.z -= 0.01
                         output_win.clear()
                         output_win.addstr(f"currently:   lv: {round(twist.linear.x, 4)}  av: {round(twist.angular.z, 4)}")
                         output_win.refresh()
                     case "x":
-                        twist.linear.x -= 0.1
+                        twist.linear.x -= 0.01
                         output_win.clear()
                         output_win.addstr(f"currently:   lv: {round(twist.linear.x, 4)}  av: {round(twist.angular.z, 4)}")
                         output_win.refresh()  
