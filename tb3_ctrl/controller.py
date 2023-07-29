@@ -7,7 +7,7 @@ from curses import wrapper
 class ControllerPublisher(Node):
     def __init__(self):
         super().__init__("controller_publisher")
-        self.publisher = self.create_publisher(Twist, "/cmd_vel", 10)
+        self.publisher_ = self.create_publisher(Twist, "/cmd_vel", 10)
         
     def controller(self, stdscr):
         twist = Twist()
@@ -68,13 +68,15 @@ class ControllerPublisher(Node):
                 twist.linear.x = 0.0
                 twist.angular.z = 0.0
                 break
+            
+            self.publisher_.publish(twist)
         
         
 def main(args=None):
     rclpy.init(args=args)
     
     ctrl_pub = ControllerPublisher()
-    wrapper(ctrl_pub.controller())
+    wrapper(ctrl_pub.controller)
     
     ctrl_pub.destroy_node()
     

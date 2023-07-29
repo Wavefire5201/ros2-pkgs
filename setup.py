@@ -20,6 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            "control = tb3_ctrl.controller:main"
         ],
     },
 )
